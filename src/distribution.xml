@@ -35,10 +35,26 @@
     <domain enable_anywhere="false" enable_currentUserHome="false" enable_localSystem="true" />
 
     <choices-outline>
-        <line choice="lv2" />
+       ${LV2_DISABLED_OPEN}<line choice="lv2" />${LV2_DISABLED_END}
+       ${VST2_DISABLED_OPEN}<line choice="vst2" />${VST2_DISABLED_END}
+       ${VST3_DISABLED_OPEN}<line choice="vst3" />${VST3_DISABLED_END}
     </choices-outline>
 
+    ${LV2_DISABLED_OPEN}
     <choice id="lv2" visible="true" start_selected="true" title="${APP_NAME} LV2">
         <pkg-ref id="${BUNDLE_ID}.lv2.pkg" version="${VERSION}" onConclusion="none">${PKG}.lv2.pkg</pkg-ref>
     </choice>
+    ${LV2_DISABLED_END}
+
+    ${VST2_DISABLED_OPEN}
+    <choice id="vst2" visible="true" start_selected="true" title="${APP_NAME} VST2">
+        <pkg-ref id="${BUNDLE_ID}.vst2.pkg" version="${VERSION}" onConclusion="none">${PKG}.vst2.pkg</pkg-ref>
+    </choice>
+    ${VST2_DISABLED_END}
+
+    ${VST3_DISABLED_OPEN}
+    <choice id="vst3" visible="true" start_selected="true" title="${APP_NAME} VST3">
+        <pkg-ref id="${BUNDLE_ID}.vst3.pkg" version="${VERSION}" onConclusion="none">${PKG}.vst3.pkg</pkg-ref>
+    </choice>
+    ${VST3_DISABLED_END}
 </installer-gui-script>

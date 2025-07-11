@@ -1,4 +1,4 @@
-# lsp-macos-pks
+# lsp-macos-pkg
 
 LSP repository to build packages for macOS.
 
@@ -24,6 +24,21 @@ Click "Allow Anyway".
 4. Re-open the Installer<br>
 Open the .pkg file again. You will now have the option to proceed by clicking Open and entering your password if prompted.
 
-![image](https://github.com/Marvo2011/lsp-macos-pkg/blob/master/res/doc/Installer-1.png)
+# Demo Screenshots 
 
-![image](https://github.com/Marvo2011/lsp-macos-pkg/blob/master/res/doc/Installer-2.png)
+![image](res/doc/Installer-1.png)
+
+![image](res/doc/Installer-2.png)
+
+# Usage
+
+The idea is that we can simply create a tag with version of lsp-plugins (tag or branch) and we get the *.pkg from the github pipeline as an artifact.
+
+For manual use:
+
+Note that VERSION can also a tag or branch of lsp-plugins
+```
+brew install make pkgconf cairo freetype
+gmake clean
+gmake FEATURES="lv2 ui" VERSION="devel"
+```
