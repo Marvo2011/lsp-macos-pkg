@@ -1,0 +1,15 @@
+Please not macOS support is experimental.
+
+LSP (Linux Studio Plugins) is a collection of open-source plugins compatible with following plugin formats:
+
+CLAP - set of plugins for Clever Audio Plugins API
+JACK - Standalone versions for JACK Audio connection Kit with UI
+LADSPA - set of plugins for Linux Audio Developer's Simple Plugin API
+LV2 - set of plugins and UIs for Linux Audio Developer's Simple Plugin API (LADSPA) version 2
+VST2 / LinuxVST - set of plugins for Steinberg's VST 2.4 plugin format
+VST3 - set of plugins and for Steinberg's VST 3 plugin format
+The basic idea is to fill the lack of good and useful plugins under the GNU/Linux platform.
+
+After some contributions to other open source projects the decision was made to implement separate and independent plugin distribution.
+
+Currently project is developed and maintained by LSP Project Team with the main founder and developer at the head – Vladimir Sadovnikov.
