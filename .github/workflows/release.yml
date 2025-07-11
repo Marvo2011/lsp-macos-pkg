@@ -1,0 +1,28 @@
+name: Release packages for macOS
+
+on:
+  push:
+    branches: [devel]
+    tag:
+      - '*'
+  pull_request:
+    branches: [devel]
+
+jobs:
+  macos_stable:
+    runs-on: macos-latest
+    steps:
+      - name: Update repositories
+        run: brew update
+      - name: Install dependencies
+        run: brew install make pkgconf cairo freetype
+      - uses: actions/checkout@v3
+      - name: Build project and create packages
+        run: gmake FEATURES='lv2 ui' VERSION=$GITHUB_REF_NAME
+      - name: Display package contents
+        run: ls -l release
+      - name: Upload package to GitHub
+        uses: actions/upload-artifact@v3
+        with:
+          name: lsp-plugins-macos
+          paths: release/*.pkg
